@@ -120,11 +120,9 @@ namespace prenotazioneAlbergo
                     prenotazione.prezzoAlGiorno = 55;
                 }
             }
-            if (parcheggio)
-            {
-                prenotazione.prezzoAlGiorno += 5;
-            }
-            double prezzo;
+
+            // calcolo del prezzo
+            double prezzoParziale = prenotazione.prezzoAlGiorno * prenotazione.numeroPrenotati;
             if (prenotazione.sconto == 0)
             {
                 prezzo = prenotazione.prezzoAlGiorno * giorniPrenotati;
