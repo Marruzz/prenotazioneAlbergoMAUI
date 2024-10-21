@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prenotazioneAlbergo.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="30"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Benvenuto al Majo Continental"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+
+            <Label 
+                Text="Inserire la data di inizio del soggiorno"
+                />
+
+            <DatePicker 
+                x:Name="dataInizio"
+                MaximumDate="12/30/2024"
+                Format="d"
+                
+            />
+
+            <Label 
+                Text="Inserire la data di fine del soggiorno"
+                />
+
+
+            <DatePicker x:Name="dataFine"
+                  MaximumDate="12/31/2024"
+                />
+
+            <Picker x:Name="pickerPrenotati"
+        Title="Quanti ospiti siete?">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="pickerTipoStanza"
+        Title="Che tipo di stanza desiderate?">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Base</x:String>
+                        <x:String>Media</x:String>
+                        <x:String>Alta</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Label
+                Text="Desiderate il parcheggio custodito?"
+                />
+
+            <CheckBox
+                x:Name="CheckParcheggio"
+               HorizontalOptions="Start"
+                Margin="-11, 0, 0, 0"
+                />
+
+            <Button
+               x:Name="BtnConferma" 
+               Text="Conferma"
+                Clicked="BtnConferma_Clicked"
+                />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
