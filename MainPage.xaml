@@ -1,44 +1,63 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="prenotazioneAlbergo.MainPage">
+             x:Class="prenotazioneAlbergo.MainPage"
+             BackgroundColor="#f0f0f5">
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="30"
-            Padding="30,0"
-            VerticalOptions="Center">
+            Spacing="20"
+            Padding="20"
+            VerticalOptions="Center"
+            x:Name="verticalStackLayout"
+            BackgroundColor="AliceBlue">
 
             <Label
                 Text="Benvenuto al Majo Continental"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
+                HorizontalOptions="Center"
+                TextColor="#2a2a72"
+                FontAttributes="Bold" />
+
+            <Image
+                Source="logo.jpeg"
+                Aspect="AspectFill"
+                HeightRequest="200"
+                WidthRequest="200"
                 HorizontalOptions="Center" />
-
-
             <Label 
-                Text="Inserire la data di inizio del soggiorno"
-                />
-
+                    Text="Inserire la data di inizio del soggiorno"
+                    TextColor="#2a2a72"
+                    FontAttributes="Bold" />
             <DatePicker 
-                x:Name="dataInizio"
-                MaximumDate="12/30/2024"
-                Format="d"
-                
-            />
+                    x:Name="dataInizio"
+                    MaximumDate="12/30/2024"
+                    Format="d"
+                    TextColor="#2a2a72"
+                    />
 
             <Label 
-                Text="Inserire la data di fine del soggiorno"
-                />
+                    Text="Inserire la data di fine del soggiorno"
+                    TextColor="#2a2a72"
+                    FontAttributes="Bold" />
+            <DatePicker 
+                    x:Name="dataFine"
+                    MaximumDate="12/31/2024"
+                    TextColor="#2a2a72"
+                    />
 
 
-            <DatePicker x:Name="dataFine"
-                  MaximumDate="12/31/2024"
-                />
-
-            <Picker x:Name="pickerPrenotati"
-        Title="Quanti ospiti siete?">
-                <Picker.ItemsSource>
+            <Label 
+                    Text="Quanti ospiti siete?"
+                    TextColor="#2a2a72"
+                    FontAttributes="Bold" />
+            <Picker 
+                    x:Name="pickerPrenotati"
+                    SelectedIndexChanged="PickerPrenotati_SelectedIndexChanged"
+                    TextColor="#2a2a72"
+                    BackgroundColor="#ffffff">
+                <Picker.ItemsSource TextColor="#2a2a72">
                     <x:Array Type="{x:Type x:String}">
                         <x:String>1</x:String>
                         <x:String>2</x:String>
@@ -49,9 +68,16 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Picker x:Name="pickerTipoStanza"
-        Title="Che tipo di stanza desiderate?">
-                <Picker.ItemsSource>
+
+            <Label 
+                    Text="Che tipo di stanza desiderate?"
+                    TextColor="#2a2a72"
+                    FontAttributes="Bold" />
+            <Picker 
+                    x:Name="pickerTipoStanza"
+                    TextColor="#2a2a72"
+                    BackgroundColor="#ffffff">
+                <Picker.ItemsSource TextColor="#2a2a72">
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Base</x:String>
                         <x:String>Media</x:String>
@@ -61,22 +87,27 @@
             </Picker>
 
 
-            <Label
-                Text="Desiderate il parcheggio custodito?"
-                />
+            <StackLayout x:Name="stackLayoutNomiPrenotati" />
 
+
+            <Label
+                    Text="Desiderate il parcheggio custodito?"
+                    TextColor="#2a2a72"
+                    FontAttributes="Bold" />
             <CheckBox
-                x:Name="CheckParcheggio"
-               HorizontalOptions="Start"
-                Margin="-11, 0, 0, 0"
-                />
+                    x:Name="CheckParcheggio"
+                    HorizontalOptions="Start"
+                    Color="#2a2a72" />
+
 
             <Button
-               x:Name="BtnConferma" 
-               Text="Conferma"
+                x:Name="BtnConferma"
+                Text="Conferma"
                 Clicked="BtnConferma_Clicked"
-                />
-
+                BackgroundColor="#2a2a72"
+                TextColor="#ffffff"
+                CornerRadius="10"
+                FontAttributes="Bold" />
 
         </VerticalStackLayout>
     </ScrollView>
